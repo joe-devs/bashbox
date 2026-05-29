@@ -32,3 +32,7 @@ obj/
 *.db
 *.sqlite
 *.bak
+
+# Allow environment example files
+!.env.example
+!.env.local.example

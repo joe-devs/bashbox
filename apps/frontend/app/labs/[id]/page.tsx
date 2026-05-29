@@ -82,7 +82,7 @@ export default function LabPage() {
                 }
             }, 800);
 
-            const response = await fetch('http://localhost:4000/api/labs/start', {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://localhost:4000'}/api/labs/start`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ user_id: "sysadmin_kai", lab_id: labId }),
