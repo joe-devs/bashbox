@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Terminal, Clock, Shield, ArrowRight, Lock } from 'lucide-react';
 
 export default function LabsPage() {
-    const labs = [
+    const labs: Lab[] = [
         {
             id: 404, // Matches the route /labs/404
             title: "Sudo Privileges",
@@ -66,7 +66,19 @@ export default function LabsPage() {
     );
 }
 
-function LabCard({ lab }: { lab: any }) {
+type Lab = {
+    id: number;
+    title: string;
+    description: string;
+    difficulty: "Easy" | "Medium" | "Hard";
+    time: string;
+    module: string;
+    status: string;
+    progress: number;
+    locked: boolean;
+};
+
+function LabCard({ lab }: { lab: Lab }) {
     if (lab.locked) {
         return (
             <div className="group relative bg-[#161b22]/50 border border-gray-800 rounded-2xl p-6 flex flex-col h-full opacity-60 hover:opacity-100 transition-opacity">

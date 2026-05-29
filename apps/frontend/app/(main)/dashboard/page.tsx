@@ -45,7 +45,9 @@ export default function DashboardPage() {
     );
 }
 
-function StatRow({ label, value, icon, color = "text-[#39FF14]" }: any) {
+type StatRowProps = { label: string; value: string; icon: import("react").ReactNode; color?: string };
+
+function StatRow({ label, value, icon, color = "text-[#39FF14]" }: StatRowProps) {
     return (
         <div className="flex items-center gap-3 bg-black/40 p-4 border border-gray-800/50">
             <div className="text-gray-600">{icon}</div>

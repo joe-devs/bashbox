@@ -46,7 +46,9 @@ export default function LandingPage() {
     );
 }
 
-function Feature({ icon, title, desc }: any) {
+type FeatureProps = { icon: import("react").ReactNode; title: string; desc: string };
+
+function Feature({ icon, title, desc }: FeatureProps) {
     return (
         <div className="p-8 border border-gray-800 bg-[#161b22]/50 backdrop-blur-sm text-left group hover:border-[#39FF14]/50 transition-colors">
             <div className="text-[#39FF14] mb-4 group-hover:scale-110 transition-transform">{icon}</div>

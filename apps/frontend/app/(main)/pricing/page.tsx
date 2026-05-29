@@ -35,7 +35,9 @@ export default function PricingPage() {
     );
 }
 
-function PriceCard({ tier, price, features, featured = false }: any) {
+type PriceCardProps = { tier: string; price: string; features: string[]; featured?: boolean };
+
+function PriceCard({ tier, price, features, featured = false }: PriceCardProps) {
     return (
         <div className={`p-10 rounded-[2.5rem] border flex flex-col relative transition-all ${featured ? 'bg-[#161b22] border-[#39FF14] shadow-[0_0_40px_rgba(57,255,20,0.1)] scale-105 z-10' : 'bg-[#161b22] border-gray-800'
             }`}>
