@@ -26,7 +26,7 @@ export async function terminalRoutes(fastify: FastifyInstance) {
 
         term.onData((data) => connection.socket.send(data));
 
-        connection.socket.on('message', (message) => {
+        connection.socket.on('message', (message: Buffer) => {
             const data = message.toString();
             try {
                 const json = JSON.parse(data);
