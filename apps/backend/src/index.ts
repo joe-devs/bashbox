@@ -13,7 +13,7 @@ await fastify.register(cors);
 await fastify.register(fastifyWebsocket);
 
 fastify.get('/api/health', async () => ({ ok: true }));
-await fastify.register(labRoutes);
+await fastify.register(labRoutes, { prefix: '/api/labs' });
 await fastify.register(terminalRoutes);
 
 // Session GC Interval

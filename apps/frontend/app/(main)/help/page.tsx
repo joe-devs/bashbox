@@ -35,7 +35,11 @@ export default function HelpPage() {
     );
 }
 
-function HelpAction({ icon, title, desc }: any) {
+type HelpActionProps = { icon: import("react").ReactNode; title: string; desc: string };
+
+type FAQItemProps = { question: string; answer: string };
+
+function HelpAction({ icon, title, desc }: HelpActionProps) {
     return (
         <div className="bg-[#161b22] border border-gray-800 p-6 rounded-2xl flex items-center gap-4 cursor-pointer hover:border-gray-600 transition-colors group">
             <div className="p-3 bg-black rounded-xl border border-gray-800 group-hover:border-[#39FF14]/50">{icon}</div>
@@ -47,7 +51,7 @@ function HelpAction({ icon, title, desc }: any) {
     );
 }
 
-function FAQItem({ question, answer }: any) {
+function FAQItem({ question, answer }: FAQItemProps) {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className="bg-[#161b22] border border-gray-800 rounded-2xl overflow-hidden">

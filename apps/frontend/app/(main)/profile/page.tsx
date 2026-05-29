@@ -51,7 +51,11 @@ export default function ProfilePage() {
     );
 }
 
-function ProfileStat({ label, value, icon }: any) {
+type ProfileStatProps = { label: string; value: string; icon: import("react").ReactNode };
+
+type ActivityRowProps = { module: string; date: string };
+
+function ProfileStat({ label, value, icon }: ProfileStatProps) {
     return (
         <div className="bg-[#161b22] border border-gray-800 p-6 rounded-2xl flex items-center gap-4">
             <div className="text-[#39FF14]">{icon}</div>
@@ -63,7 +67,7 @@ function ProfileStat({ label, value, icon }: any) {
     );
 }
 
-function ActivityRow({ module, date }: any) {
+function ActivityRow({ module, date }: ActivityRowProps) {
     return (
         <div className="bg-[#161b22] border border-gray-800 p-4 rounded-xl flex items-center justify-between group cursor-pointer hover:border-gray-600">
             <div className="flex items-center gap-3">

@@ -82,7 +82,7 @@ export default function LabPage() {
                 }
             }, 800);
 
-            const response = await fetch('http://localhost:8000/api/start-lab', {
+            const response = await fetch('http://localhost:4000/api/labs/start', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ user_id: "sysadmin_kai", lab_id: labId }),
